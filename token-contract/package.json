@@ -1,0 +1,16 @@
+{
+    "name": "remelife-contracts",
+    "version": "1.0.0",
+    "description": "ReMeLife smart contracts",
+    "main": "index.js",
+    "scripts": {
+        "compile": "etherlime compile --solcVersion 0.6.6 --runs 999"
+    },
+    "author": "LimeChain",
+    "license": "ISC",
+    "dependencies": {
+        "@openzeppelin/contracts": "^3.2.0",
+        "etherlime": "^2.3.3",
+        "etherlime-lib": "^1.2.3"
+    }
+}
