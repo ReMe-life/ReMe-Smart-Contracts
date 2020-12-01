@@ -14,8 +14,12 @@ contract MerkleAirDrop is RootValidator {
     address public tokenDistributor;
 
     constructor(address _tokenContract, address _tokenDistributor) public {
-        require(_tokenDistributor != address(0));
+        setTokenDistributor(_tokenDistributor);
         tokenContract = IERC20(_tokenContract);
+    }
+
+    function setTokenDistributor(address _tokenDistributor) public onlyOwner {
+        require(_tokenDistributor != address(0));
         tokenDistributor = _tokenDistributor;
     }
 
@@ -30,15 +34,7 @@ contract MerkleAirDrop is RootValidator {
         );
 
         require(
-            verifyDataInState(
-                abi.encodePacked(
-                    data,
-                    ":",
-                    ConvertUtils.uintToBytesString(totalTokenAmount)
-                ),
-                nodes,
-                leafIndex
-            ),
+            isInState(userAddress, totalTokenAmount, nodes, leafIndex),
             "Data not contained"
         );
 
