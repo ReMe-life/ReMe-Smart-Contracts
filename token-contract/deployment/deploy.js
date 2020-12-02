@@ -1,5 +1,5 @@
 const etherlime = require("etherlime-lib");
-const ehters = require("ethers");
+const ethers = require("ethers");
 const ReMCToken = require("../build/ReMCToken.json");
 const TokenTimelock = require("../build/TokenTimelock.json");
 
@@ -59,6 +59,3 @@ const deploy = async (network, secret) => {
 module.exports = {
     deploy,
 };
-
-
-// etherlime deploy --network rinkeby --secret 0xc44377c50845ee070c98c4295bde42f2fbf5a91e81ce2d6d23683291f23dfe0a --compile false
