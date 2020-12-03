@@ -67,6 +67,14 @@ contract TokenTimelock {
         return beneficiaries[_beneficiary].length;
     }
 
+    function getTimestampAfterNDays(uint256 _days)
+        public
+        view
+        returns (uint256)
+    {
+        return block.timestamp + _days * 1 days;
+    }
+
     /**
      * @param _releaseTime should be the timestamp of the release date in seconds since unix epoch.
      */
