@@ -29,10 +29,6 @@ contract MerkleAirDrop is RootValidator {
         bytes32[] memory nodes,
         uint256 leafIndex
     ) public {
-        bytes memory data = ConvertUtils.addressToBytesString(
-            address(userAddress)
-        );
-
         require(
             isInState(userAddress, totalTokenAmount, nodes, leafIndex),
             "Data not contained"
