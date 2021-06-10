@@ -11,6 +11,8 @@ describe("ReMCToken", function () {
     const name = "ReMeLifeCore";
     const symbol = "ReMC";
 
+    const PREMINTED_AMOUNT = ethers.utils.parseEther("1000000000");
+
     const adminRole = ethers.utils.keccak256(ethers.utils.toUtf8Bytes("ADMIN"));
     const minterRole = ethers.utils.keccak256(
         ethers.utils.toUtf8Bytes("MINTER")
@@ -23,7 +25,8 @@ describe("ReMCToken", function () {
             {},
             name,
             symbol,
-            minter.signer.address
+            minter.signer.address,
+            PREMINTED_AMOUNT
         );
     });
 

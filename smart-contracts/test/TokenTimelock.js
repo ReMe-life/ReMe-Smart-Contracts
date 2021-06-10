@@ -21,6 +21,8 @@ describe("TokenTimelock", function () {
     const minter = accounts[8];
     let reMCTokenInstance;
 
+    const PREMINTED_AMOUNT = ethers.utils.parseEther("1000000000");
+
     const name = "ReMeLifeCore";
     const symbol = "ReMC";
 
@@ -33,7 +35,8 @@ describe("TokenTimelock", function () {
             {},
             name,
             symbol,
-            minter.signer.address
+            minter.signer.address,
+            PREMINTED_AMOUNT
         );
         tokenTimelockInstance = await deployer.deploy(
             TokenTimelock,

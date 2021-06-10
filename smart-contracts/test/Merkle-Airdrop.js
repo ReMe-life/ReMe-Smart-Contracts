@@ -17,6 +17,7 @@ const symbol = "ReMC";
 
 const userAddress = "0xd9995bae12fee327256ffec1e3184d492bd94c31";
 const amountToClaim = "5000000000000000000";
+const PREMINTED_AMOUNT = ethers.utils.parseEther("1000000000");
 
 
 let arrayOfHashes;
@@ -34,7 +35,8 @@ describe('Example', function () {
 			{},
 			name,
 			symbol,
-			minter.signer.address);
+			minter.signer.address,
+			PREMINTED_AMOUNT);
 
 		await reMCToken.from(minter).mint(tokenDistributor.address, amountToMint);
 		MerkleUtilsLib = await deployer.deploy(MerkleUtils);
