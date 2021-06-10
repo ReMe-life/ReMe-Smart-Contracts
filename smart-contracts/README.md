@@ -6,6 +6,8 @@
 
 ### Preset:
 
+-   `nmp install`
+
 in `/deployment/deploy.js` set the values of:
 
 -   `INFURA_PROVIDER` - Infura api key. [https://infura.io/](https://infura.io/)
